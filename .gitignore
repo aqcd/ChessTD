@@ -1,0 +1,10 @@
+.vs/
+.vscode/
+Assembly-CSharp.csproj
+ChessTD.sln
+Library/
+Logs/
+Packages/
+ProjectSettings/
+UserSettings/
+obj/
