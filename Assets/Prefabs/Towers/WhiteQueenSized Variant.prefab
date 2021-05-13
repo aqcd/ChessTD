@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
+  towerDeathEffect: {fileID: 792801058648719801, guid: 7ceefe494459428478419addf9dc255b, type: 3}
 --- !u!1001 &9180915259455239947
 PrefabInstance:
   m_ObjectHideFlags: 0

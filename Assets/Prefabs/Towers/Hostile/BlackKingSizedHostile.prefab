@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5fcc44410d2dc46820463627efa0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 3
   bulletPrefab: {fileID: 4196066643650811479, guid: cbb7bff8f8e850f44afda1df28764fd8, type: 3}
   shooterType: 1
 --- !u!1001 &414689969205140865

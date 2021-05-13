@@ -27,6 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 16
+  enemyDeathEffect: {fileID: 6887878084880252793, guid: 1a0178bd68689a14ca02b26c399d00f3, type: 3}
 --- !u!114 &5487361794365375849
 MonoBehaviour:
   m_ObjectHideFlags: 0

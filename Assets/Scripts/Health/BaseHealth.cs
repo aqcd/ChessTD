@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BaseHealth : MonoBehaviour {
+public abstract class BaseHealth : MonoBehaviour {
     public int maxHealth;
 
     private int currentHealth;
@@ -20,7 +20,5 @@ public class BaseHealth : MonoBehaviour {
         }
     }
 
-    void triggerDeath() {
-        Destroy(gameObject);
-    }
+    public abstract void triggerDeath();
 }
