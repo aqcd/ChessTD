@@ -5639,6 +5639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602421618}
   - component: {fileID: 602421619}
+  - component: {fileID: 602421620}
   m_Layer: 0
   m_Name: WaveManager
   m_TagString: Untagged
@@ -5672,8 +5673,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0404986fee838f84f91cceda89fc3a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 336442991122270865, guid: 0a3c48b494eb8874f978b01886218229, type: 3}
   spawnLocation: {fileID: 3689357}
+--- !u!114 &602421620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602421617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b37a84c69d88b4d4dbfdf0bd51c4e752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPawnPrefab: {fileID: 2338314788386646471, guid: 0a3c48b494eb8874f978b01886218229, type: 3}
+  enemyKnightPrefab: {fileID: 4447576005255283020, guid: 4e0a8e6b14da4644787116307b7b7989, type: 3}
+  enemyBishopPrefab: {fileID: 1677039156844232903, guid: d7c43aa159297c149a930d4d5e08208b, type: 3}
+  enemyRookPrefab: {fileID: 2744653104316235282, guid: 9265a5eb170face4c952c948ea103ff6, type: 3}
+  enemyQueenPrefab: {fileID: 2367885934986348021, guid: 53f5e420d7c6c8f46bd793f03574001c, type: 3}
+  enemyKingPrefab: {fileID: 778109979070712407, guid: 5c6df58a502d0de4984dbd7ca221485a, type: 3}
 --- !u!4 &614886018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6377520187820345190, guid: 7e1e09202341d37478e8aec96ca170e4, type: 3}

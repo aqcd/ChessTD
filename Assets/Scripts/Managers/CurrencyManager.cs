@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 class CurrencyManager : MonoBehaviour {
     public static CurrencyManager instance;

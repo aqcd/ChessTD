@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 class CostManager : MonoBehaviour {
     public static CostManager instance;

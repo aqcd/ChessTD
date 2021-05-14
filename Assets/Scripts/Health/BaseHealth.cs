@@ -12,6 +12,11 @@ public abstract class BaseHealth : MonoBehaviour {
         currentHealth = maxHealth;
     }
 
+    public void multiplyHealth(int multiplier) {
+        maxHealth *= multiplier;
+        currentHealth = maxHealth;
+    }
+
     public void takeDamage(int damage) {
         currentHealth -= damage;
         checkDeath();
