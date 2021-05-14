@@ -15,5 +15,4 @@ public class LivesUI : MonoBehaviour {
     public void setLivesText(string text) {
         livesText.text = text;
     }
-
 }

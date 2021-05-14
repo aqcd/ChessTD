@@ -43,6 +43,7 @@ abstract public class BaseShoot : MonoBehaviour {
             if  (bulletMovementComponent != null) {
                 bulletMovementComponent.setTarget(targetArray[i]);
                 bulletMovementComponent.setVelocity(velocity);
+                bulletMovementComponent.setType(shooterType);
             }
 
             BulletDamage bulletDamageComponent = bullet.GetComponent<BulletDamage>();

@@ -37,6 +37,7 @@ public class LivesManager : MonoBehaviour {
     private void checkGameOver() {
         if (lives <= 0 && !isGameOver) {
             isGameOver = true;
+            GameOverUI.instance.endGameAtWave(GameManager.currentWave);
         }
     }
 }

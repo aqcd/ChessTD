@@ -15,5 +15,4 @@ public class CurrencyUI : MonoBehaviour {
     public void setCurrencyText(int currency) {
         currencyText.text = "  Coins: " + currency;
     }
-
 }

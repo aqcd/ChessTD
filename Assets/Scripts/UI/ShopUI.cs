@@ -35,5 +35,4 @@ public class ShopUI : MonoBehaviour {
     public void setBlockCostText(int cost) {
         blockCost.text = cost.ToString();
     }
-
 }
