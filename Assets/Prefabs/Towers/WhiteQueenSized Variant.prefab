@@ -43,6 +43,20 @@ MonoBehaviour:
   maxHealth: 200
   healthBar: {fileID: 8690491523158660667}
   towerDeathEffect: {fileID: 792801058648719801, guid: 7ceefe494459428478419addf9dc255b, type: 3}
+--- !u!114 &7721295999165559371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715983626619534475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857051b4f6d541548a2e8b85390c7b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  level: 1
 --- !u!1001 &1331775626995479146
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,11 +20,10 @@ public abstract class BaseHealth : MonoBehaviour {
     public void takeDamage(int damage) {
         currentHealth -= damage;
         checkDeath();
-        Debug.Log((float)currentHealth / (float)maxHealth);
         healthBar.fillAmount = (float)currentHealth / (float)maxHealth;
     }
 
-    void checkDeath() {
+    private void checkDeath() {
         if (currentHealth <= 0) {
             triggerDeath();
         }

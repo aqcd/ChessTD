@@ -9,9 +9,9 @@ class CostManager : MonoBehaviour {
         }
     }
 
-    public void updateCosts(Tower tower, TowerEnum type) {
+    public void updateCosts(Tower tower) {
         int increment = 0;
-        switch(type) {
+        switch(tower.type) {
             case TowerEnum.BLOCK:
                 increment = 2;
                 break;
@@ -21,14 +21,10 @@ class CostManager : MonoBehaviour {
         }
         tower.costIncrement += increment;
         
-        updateUI();
+        updateUIForType(tower.type);
     }
 
-    private void updateUI() {
-        ShopUI.instance.setKnightCostText(BuildManager.instance.knightTower.getCost());
-        ShopUI.instance.setBishopCostText(BuildManager.instance.bishopTower.getCost());
-        ShopUI.instance.setRookCostText(BuildManager.instance.rookTower.getCost());
-        ShopUI.instance.setQueenCostText(BuildManager.instance.queenTower.getCost());
-        ShopUI.instance.setBlockCostText(BuildManager.instance.blockTower.getCost());
+    private void updateUIForType(TowerEnum type) {
+        ShopUI.instance.setCost(type, TowerManager.instance.getCostFromType(type));
     }
 }

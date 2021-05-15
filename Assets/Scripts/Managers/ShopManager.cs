@@ -11,19 +11,24 @@ class ShopManager : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("q")) {
             blockLayoutElement.gameObject.GetComponent<Button>().Select();
+            setBlockTower();
         } else if (Input.GetKeyDown("1")) {
             knightLayoutElement.gameObject.GetComponent<Button>().Select();
+            setKnightTower();
         } else if (Input.GetKeyDown("2")) {
             bishopLayoutElement.gameObject.GetComponent<Button>().Select();
+            setBishopTower();
         } else if (Input.GetKeyDown("3")) {
             rookLayoutElement.gameObject.GetComponent<Button>().Select();
+            setRookTower();
         } else if (Input.GetKeyDown("4")) {
             queenLayoutElement.gameObject.GetComponent<Button>().Select();
+            setQueenTower();
         }
     }
 
     public void setTower(TowerEnum type) {
-        BuildManager.instance.setTowerToBuild(TowerEnum.KNIGHT);
+        BuildManager.instance.setTowerToBuild(type);
     }
 
     public void setKnightTower() {

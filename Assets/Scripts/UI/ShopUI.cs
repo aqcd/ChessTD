@@ -1,14 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour {
     public static ShopUI instance;
 
-    public Text knightCost;
-    public Text bishopCost;
-    public Text rookCost;
-    public Text queenCost;
-    public Text blockCost;
+    public TowerCost[] towerCosts;
+
+    private Dictionary<TowerEnum, Text> towerCostDictionary = new Dictionary<TowerEnum, Text>();
 
     void Awake() {
         if (instance == null) {
@@ -16,23 +15,16 @@ public class ShopUI : MonoBehaviour {
         }
     }
 
-    public void setKnightCostText(int cost) {
-        knightCost.text = cost.ToString();
+    public void setCost(TowerEnum type, int cost) {
+        if (towerCostDictionary.Count == 0) {
+            populateDictionary();
+        }
+        towerCostDictionary[type].text = cost.ToString();
     }
 
-    public void setBishopCostText(int cost) {
-        bishopCost.text = cost.ToString();
-    }
-
-    public void setRookCostText(int cost) {
-        rookCost.text = cost.ToString();
-    }
-
-    public void setQueenCostText(int cost) {
-        queenCost.text = cost.ToString();
-    }
-
-    public void setBlockCostText(int cost) {
-        blockCost.text = cost.ToString();
+    private void populateDictionary() {
+        for (int i = 0; i < towerCosts.Length; i++) {
+            towerCostDictionary.Add(towerCosts[i].type, towerCosts[i].costText);
+        }
     }
 }

@@ -31,5 +31,6 @@ public class GameOverUI : MonoBehaviour {
     public void retry() {
         GameManager.reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1.0f;
     }
 }
