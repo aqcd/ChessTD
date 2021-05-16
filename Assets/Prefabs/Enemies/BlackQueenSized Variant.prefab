@@ -41,6 +41,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  minCoinDrop: 4
+  maxCoinDrop: 6
+  livesDropChance: 0.1
 --- !u!114 &5487361794365375849
 MonoBehaviour:
   m_ObjectHideFlags: 0

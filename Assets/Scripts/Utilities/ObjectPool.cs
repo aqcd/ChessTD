@@ -6,15 +6,21 @@ public abstract class ObjectPool : MonoBehaviour {
     Queue<GameObject> objectPool = new Queue<GameObject>();
     public GameObject objectToPool;
 
+    private Vector3 baseTransform;
+
+    private Quaternion baseRotation;
+
     public int amountToPool;
 
     protected void Awake() {
+        baseTransform = objectToPool.transform.position;
+        baseRotation = objectToPool.transform.rotation;
         initialisePool(amountToPool);
     }
 
     public void initialisePool(int quantity) {
         for (int i = 0; i < quantity; i++) {
-            GameObject obj = (GameObject) Instantiate(objectToPool, new Vector3(0f,0f,0f), new Quaternion());
+            GameObject obj = (GameObject) Instantiate(objectToPool, baseTransform, baseRotation);
             obj.SetActive(false);
             objectPool.Enqueue(obj);
         }
@@ -30,6 +36,8 @@ public abstract class ObjectPool : MonoBehaviour {
                 Debug.Log("Bad pooling.");
                 return getPooledObject();
             } else {
+                obj.transform.position = baseTransform;
+                obj.transform.rotation = baseRotation;
                 obj.SetActive(true);
                 return obj;
             }

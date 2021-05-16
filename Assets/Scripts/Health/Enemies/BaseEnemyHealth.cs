@@ -6,6 +6,8 @@ public class BaseEnemyHealth : BaseHealth {
     public override void triggerDeath() {
         GameObject enemyDeathEffectParticleSystem = (GameObject) Instantiate(enemyDeathEffect, transform.position, transform.rotation);
         Destroy(enemyDeathEffectParticleSystem, 1.0f);
+
+        EnemyDropManager.instance.handleDrops(gameObject);
         Destroy(gameObject);
     }
 }

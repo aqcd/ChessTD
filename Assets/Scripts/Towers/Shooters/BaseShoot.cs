@@ -6,8 +6,6 @@ abstract public class BaseShoot : MonoBehaviour {
     abstract public float fireRate { get; }
     private float fireCountdown = 1.0f;
 
-    private float bulletHeight = 1.0f;
-
     public int damage;
 
     public GameObject bulletPrefab;
@@ -25,11 +23,11 @@ abstract public class BaseShoot : MonoBehaviour {
 
     void shoot() {
         for (int i = 0; i < targetArray.Length; i++) {
-            Vector3 launchOrigin = new Vector3(transform.position.x, bulletHeight, transform.position.z) 
-                                                + targetArray[i].normalized * GameConstants.gridSize / 2;
-            
             GameObject bullet = shooterType == ShooterTypeEnum.FRIENDLY ? FriendlyBulletObjectPool.instance.getPooledObject()
                                                                         : EnemyBulletObjectPool.instance.getPooledObject();
+
+            Vector3 launchOrigin = new Vector3(transform.position.x, bullet.transform.position.y, transform.position.z) 
+                                                + targetArray[i].normalized * GameConstants.gridSize / 2;
             
             if (bullet != null) {
                 bullet.transform.position = launchOrigin;
