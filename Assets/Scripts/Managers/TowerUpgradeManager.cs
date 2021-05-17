@@ -10,7 +10,7 @@ public class TowerUpgradeManager : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.U)) {
+        if (Input.GetKeyDown(KeyCode.Z)) {
             upgradeTower();
         }
     }

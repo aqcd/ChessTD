@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour {
     public static PauseUI instance;
@@ -28,5 +29,9 @@ public class PauseUI : MonoBehaviour {
     public void resume() {
         Time.timeScale = 1.0f;
         pauseUIObject.SetActive(false);
+    }
+
+    public void menu() {
+        SceneManager.LoadScene(SceneNameConstants.menuSceneName);
     }
 }

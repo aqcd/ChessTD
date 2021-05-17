@@ -9,6 +9,8 @@ public class GameOverUI : MonoBehaviour {
 
     public Text gameOverText;
 
+    public string menuSceneName = "MainMenu";
+
     void Awake() {
         if (instance == null) {
             instance = this;
@@ -32,5 +34,9 @@ public class GameOverUI : MonoBehaviour {
         GameManager.reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1.0f;
+    }
+
+    public void menu() {
+        SceneManager.LoadScene(SceneNameConstants.menuSceneName);
     }
 }

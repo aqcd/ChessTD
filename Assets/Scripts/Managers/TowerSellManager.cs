@@ -12,7 +12,7 @@ public class TowerSellManager : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (Input.GetKeyDown(KeyCode.X)) {
             sellTower();
         }
     }

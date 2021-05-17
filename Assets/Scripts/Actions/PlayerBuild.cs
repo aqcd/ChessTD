@@ -8,6 +8,10 @@ public class PlayerBuild : MonoBehaviour {
     }
 
     void handleBuild() {
+        if (GameManager.activeNodeManager == null) {
+            return;
+        }
+        
         GameManager.activeNodeManager.buildTower();
     }
 }

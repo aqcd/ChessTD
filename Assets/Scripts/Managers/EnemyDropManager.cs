@@ -20,8 +20,6 @@ class EnemyDropManager : MonoBehaviour {
         int numCoins = Random.Range(enemyDetailsComponent.minCoinDrop, enemyDetailsComponent.maxCoinDrop);
         bool lifeDrop = Random.Range(0.0f, 1.0f) < enemyDetailsComponent.livesDropChance;
 
-        Debug.Log(numCoins);
-
         for (int i = 0; i < numCoins; i++) {
             GameObject coin = CoinObjectPool.instance.getPooledObject();
             coin.transform.position = coin.transform.position + enemy.transform.position;
