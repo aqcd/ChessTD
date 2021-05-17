@@ -22,6 +22,7 @@ public abstract class BaseDrop : MonoBehaviour {
     void Update() {
         handleCollect();
         handleMovement();
+        checkExpiry();
     }
 
     void handleCollect() {
@@ -43,8 +44,6 @@ public abstract class BaseDrop : MonoBehaviour {
 
         Vector3 dir = target - transform.position;
         transform.Translate(dir * interpolationFactor * Time.deltaTime * magnetFactor, Space.World);
-
-        checkExpiry();
     }
 
     public abstract void checkExpiry();

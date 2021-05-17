@@ -17,6 +17,6 @@ public class WavesUI : MonoBehaviour {
     }
 
     public void setWavesComingText(int wave, float countdown) {
-        wavesText.text = "  Wave " + (wave + 1) + " in " + Mathf.Floor(countdown).ToString();
+        wavesText.text = wave == 0 ? "  [F] to start" : "  Wave " + (wave + 1) + " in " + Mathf.Floor(countdown).ToString();
     }
 }

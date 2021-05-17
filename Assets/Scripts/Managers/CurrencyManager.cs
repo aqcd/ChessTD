@@ -26,10 +26,12 @@ class CurrencyManager : MonoBehaviour {
     }
 
     void handlePassiveIncome() {
-        countdown -= Time.deltaTime;
-        if (countdown <= 0.0f) {
-            countdown += cooldown;
-            currentCurrency += passiveIncome;
+        if (GameManager.currentWave > 0) {
+            countdown -= Time.deltaTime;
+            if (countdown <= 0.0f) {
+                countdown += cooldown;
+                currentCurrency += passiveIncome;
+            }
         }
     }
 

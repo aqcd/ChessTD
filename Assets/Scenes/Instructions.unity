@@ -1694,13 +1694,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Use (W,A,S,D) to move.
 
-    Use the mouse or hotkeys to select the shop
-    items.
+    Use the mouse or hotkeys [1, 2, 3, 4, Q] to
+    select the shop items.
 
-    Use the mouse or hotkeys to upgrade the tower beside you.
+    Use the mouse or hotkeys [Z, X] to upgrade or sell
+    the tower beside you.
 
-    Stop
-    enemies from reaching your king, while also protecting yourself!'
+    Stop enemies from reaching your king, while also protecting
+    yourself!'
 --- !u!222 &1695185680
 CanvasRenderer:
   m_ObjectHideFlags: 0

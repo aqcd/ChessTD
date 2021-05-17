@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2000670646624628493}
   - component: {fileID: 1181354184598298873}
   - component: {fileID: 3160264012587775441}
+  - component: {fileID: 2856836329861109353}
+  - component: {fileID: 9054183966245603531}
   m_Layer: 10
   m_Name: Block
   m_TagString: Untagged
@@ -95,3 +97,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2856836329861109353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200130937963885564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be163c6570592a4f83f0127e35641d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  bulletPrefab: {fileID: 4196066643650811479, guid: 7578370cc1d10084386a020154addc3c, type: 3}
+  shooterType: 0
+--- !u!114 &9054183966245603531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200130937963885564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857051b4f6d541548a2e8b85390c7b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  level: 1
+  node: {fileID: 0}

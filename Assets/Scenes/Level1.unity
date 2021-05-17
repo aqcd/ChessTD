@@ -5889,6 +5889,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLocation: {fileID: 3689357}
+  maxCountdownTimer: 6
+  intrawaveCountdown: 0.25
+  started: 0
 --- !u!114 &602421620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9749,7 +9752,7 @@ Transform:
   m_Children:
   - {fileID: 119689250}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
 --- !u!1 &965451901 stripped
 GameObject:
@@ -14177,7 +14180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialCurrency: 1000
-  passiveIncome: 2
+  passiveIncome: 1
   currentCurrency: 0
 --- !u!114 &1426362424
 MonoBehaviour:
@@ -14204,6 +14207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9d4bf3f5599464b8f44b538e5f3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interval: 5
   hostileKnightTower:
     type: 0
     towerPrefab: {fileID: 4447576005255283020, guid: ab275f190fa78bb4e8f9b81a66b65c67, type: 3}
@@ -14384,7 +14388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 1000010728489230, guid: 8b40cffea67202d4bbf662b25de4c94a, type: 3}
-  amountToPool: 250
+  amountToPool: 300
 --- !u!114 &1426362436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14398,6 +14402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deviationRange: 1
+  dropIncrementWaveInterval: 6
 --- !u!1001 &1426850418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22557,7 +22562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5613212726654555387, guid: 441686f89e4f5f240af6f81b8bb2b85d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5613212726654555387, guid: 441686f89e4f5f240af6f81b8bb2b85d, type: 3}
       propertyPath: m_AnchorMax.x

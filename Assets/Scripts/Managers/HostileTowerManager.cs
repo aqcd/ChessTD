@@ -2,7 +2,7 @@ using UnityEngine;
 
 class HostileTowerManager : MonoBehaviour {
     public static HostileTowerManager instance;
-    public static int interval = 2;
+    public int interval;
     public Tower hostileKnightTower;
     public Tower hostileBishopTower;
     public Tower hostileRookTower;

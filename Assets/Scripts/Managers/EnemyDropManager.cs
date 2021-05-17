@@ -5,6 +5,8 @@ class EnemyDropManager : MonoBehaviour {
 
     public float deviationRange;
 
+    public int dropIncrementWaveInterval;
+
     void Awake() {
         if (instance == null) {
             instance = this;
@@ -17,7 +19,7 @@ class EnemyDropManager : MonoBehaviour {
             return;
         }
 
-        int numCoins = Random.Range(enemyDetailsComponent.minCoinDrop, enemyDetailsComponent.maxCoinDrop);
+        int numCoins = Random.Range(enemyDetailsComponent.minCoinDrop, enemyDetailsComponent.maxCoinDrop) + GameManager.currentWave / dropIncrementWaveInterval;
         bool lifeDrop = Random.Range(0.0f, 1.0f) < enemyDetailsComponent.livesDropChance;
 
         for (int i = 0; i < numCoins; i++) {

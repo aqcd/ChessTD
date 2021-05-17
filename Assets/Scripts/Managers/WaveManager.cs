@@ -5,19 +5,33 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour {
     public Transform spawnLocation;
 
-    private float maxCountdownTimer = 1.0f;//4.0f;
-    private float countdown = 4.0f;
-    private float intrawaveCountdown = 0.25f;
+    public float maxCountdownTimer;
+    private float countdown;
+    public float intrawaveCountdown;
     private bool isSpawning = false;
 
     private List<Wave> waves;
     private int numDistinctWaves = 24;
+
+    public bool started = false;
 
     void Start() {
         initialiseWaves();
     }
 
     void Update() {
+        setCountdownText();
+
+        if (Input.GetKeyDown(KeyCode.F) && !started) {
+            countdown = 0.0f;
+            started = true;
+        }
+
+        if (!started) {
+            return;
+        }
+
+
         if (!isSpawning) {
             countdown -= Time.deltaTime;
         }
@@ -26,8 +40,6 @@ public class WaveManager : MonoBehaviour {
             spawnWave();
             resetCountdown();
         }
-
-        setCountdownText();
     }
 
     void initialiseWaves() {
@@ -80,7 +92,7 @@ public class WaveManager : MonoBehaviour {
 
     void incrementWaveNumber() {
         GameManager.currentWave++;
-        if (GameManager.currentWave % HostileTowerManager.interval == 0) {
+        if (GameManager.currentWave % HostileTowerManager.instance.interval == 0) {
             HostileTowerManager.instance.spawnHostileTower();
         }
     }
