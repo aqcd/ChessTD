@@ -6,6 +6,10 @@ public class LivesManager : MonoBehaviour {
     public static int lives = 1;
     public int initialLives;
 
+    public float invulPeriod;
+
+    private float currentInvulPeriod;
+
     private bool isGameOver = false;
     
     void Awake() {
@@ -16,6 +20,13 @@ public class LivesManager : MonoBehaviour {
 
     void Start() {
         lives = initialLives;
+        currentInvulPeriod = 0;
+    }
+
+    public void Update() {
+        if (currentInvulPeriod > 0) {
+            currentInvulPeriod -= Time.deltaTime;
+        }
     }
 
     public void incrementLives() {
@@ -28,6 +39,14 @@ public class LivesManager : MonoBehaviour {
         checkGameOver();
         DamageUI.instance.damageTaken();
         updateUI();
+    }
+
+    public void decrementLivesWithInvul() {
+        if (currentInvulPeriod > 0) {
+            return;
+        }
+        decrementLives();
+        currentInvulPeriod = invulPeriod;
     }
 
     private void updateUI() {

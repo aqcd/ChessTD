@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     private float horizontalInput;
+    private float previousHorizontalInput;
     private float verticalInput;
+    private float previousVerticalInput;
 
-    private float playerVelocity = 8.0f;
+    private float playerVelocity = 0.1f;
 
     void Start() {
         updatePlayerPosition();
@@ -18,7 +20,13 @@ public class PlayerMovement : MonoBehaviour {
     void handleMovement() {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        GetComponent<Rigidbody>().velocity = new Vector3(horizontalInput, 0, verticalInput) * playerVelocity;
+        Rigidbody rigidbodyComponent = GetComponent<Rigidbody>();
+        rigidbodyComponent.transform.position = rigidbodyComponent.transform.position + 
+                                                new Vector3(Mathf.Abs(horizontalInput) >= Mathf.Abs(previousHorizontalInput) ? horizontalInput : 0, 
+                                                            0, 
+                                                            Mathf.Abs(verticalInput) >= Mathf.Abs(previousVerticalInput) ? verticalInput : 0) * playerVelocity;
+        previousHorizontalInput = horizontalInput;
+        previousVerticalInput = verticalInput;
     }
 
     void updatePlayerPosition() {

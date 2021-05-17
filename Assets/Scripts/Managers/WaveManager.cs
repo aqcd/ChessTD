@@ -65,7 +65,7 @@ public class WaveManager : MonoBehaviour {
         isSpawning = true;
 
         List<EnemyEnum> waveArray = waves[GameManager.currentWave % 24].getAsList();
-        int healthMultiplier = GameManager.currentWave / 24 + 1;
+        int healthMultiplier = 2 * (GameManager.currentWave / numDistinctWaves) + 1;
         EnemyPrefabs enemyPrefabsInstance = EnemyPrefabs.instance;
 
         for(int i = 0; i < waveArray.Count; i++) {

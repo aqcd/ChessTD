@@ -42,7 +42,7 @@ public class BulletMovement : MonoBehaviour {
             GameObject impactEffectParticleSystem;
             switch(collider.gameObject.layer) {
                 case 6: //Player.
-                    LivesManager.instance.decrementLives();
+                    LivesManager.instance.decrementLivesWithInvul();
                     break;
                 case 9: // Boundary.
                     break;

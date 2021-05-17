@@ -18,7 +18,11 @@ public class BaseEnemyMovement : MonoBehaviour {
 
     void doMovement() {
         Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * velocity * Time.deltaTime, Space.World);
+        Vector3 translation = direction.normalized * velocity * Time.deltaTime;
+        if (translation.magnitude > direction.magnitude) {
+            translation = direction;
+        }
+        transform.Translate(translation, Space.World);
     }
 
     void checkWaypointReached() {
