@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     private float verticalInput;
     private float previousVerticalInput;
 
-    private float playerVelocity = 0.1f;
+    private float playerVelocity = 8.0f;
 
     void Start() {
         updatePlayerPosition();
@@ -21,10 +21,9 @@ public class PlayerMovement : MonoBehaviour {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         Rigidbody rigidbodyComponent = GetComponent<Rigidbody>();
-        rigidbodyComponent.transform.position = rigidbodyComponent.transform.position + 
-                                                new Vector3(Mathf.Abs(horizontalInput) >= Mathf.Abs(previousHorizontalInput) ? horizontalInput : 0, 
-                                                            0, 
-                                                            Mathf.Abs(verticalInput) >= Mathf.Abs(previousVerticalInput) ? verticalInput : 0) * playerVelocity;
+        rigidbodyComponent.velocity = new Vector3(Mathf.Abs(horizontalInput) >= Mathf.Abs(previousHorizontalInput) ? horizontalInput : 0, 
+                                                  0, 
+                                                  Mathf.Abs(verticalInput) >= Mathf.Abs(previousVerticalInput) ? verticalInput : 0) * playerVelocity;
         previousHorizontalInput = horizontalInput;
         previousVerticalInput = verticalInput;
     }
