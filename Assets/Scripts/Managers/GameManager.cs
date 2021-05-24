@@ -10,6 +10,7 @@ class GameManager {
     public static int currentWave = 0;
 
     public static bool isGameActive = true;
+    public static bool hasCompletedTutorial = false;
 
     public static void setActiveNodeManager(NodeManager nodeManager) {
         activeNodeManager = nodeManager;
